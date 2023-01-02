@@ -86,5 +86,5 @@ find = long_regex.search(string_to_be_passed)
 print(find.group(1), find.group(2))
 
 
-# if we want a dot to get the "\n" (it usually doesnt) we need to use the DOTALL method of re (re>DOTALL)
+# if we want a dot to get the "\n" (it usually doesnt) we need to use the DOTALL method of re (re.DOTALL)
 # if we want case insensitive search we need to use the I method of re (re.I)
