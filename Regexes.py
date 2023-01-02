@@ -88,3 +88,18 @@ print(find.group(1), find.group(2))
 
 # if we want a dot to get the "\n" (it usually doesnt) we need to use the DOTALL method of re (re.DOTALL)
 # if we want case insensitive search we need to use the I method of re (re.I)
+name_Regex = re.compile(r'Bob (\w)\w*')
+string_to_be_passed = "Bob Harley told Bob Mareley that he is Bob Bradly"
+# we use sub to replace text
+new_string = re.sub(name_Regex, "Tom", string_to_be_passed)
+print(new_string)
+
+# when we have complex pattern it is good to use re.VERBOSE to be able to write on multiple lines
+
+Regex = re.compile(r'''  #triple (') to define multiline string
+    (/d/d/d/d) # year
+    (/d/d) #month
+    (/d/d) # day
+''', re.VERBOSE)
+# if we wan to use multiple re.something in the compile method we can do it with |
+someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL)
